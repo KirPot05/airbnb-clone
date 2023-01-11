@@ -8,7 +8,7 @@ function Header() {
         <Image
           src="https://links.papareact.com/qd3"
           fill
-          className="object-contain object-left"
+          className="object-contain object-left "
           alt=""
         />
       </div>
