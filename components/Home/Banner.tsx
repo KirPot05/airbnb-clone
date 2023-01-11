@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Banner() {
   return (
-    <div className="relative h-80 sm:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px]">
+    <section className="relative h-80 sm:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px]">
       <Image
         src="https://links.papareact.com/0fm"
         className="object-cover"
@@ -18,7 +18,7 @@ function Banner() {
           I'm flexible{" "}
         </button>
       </div>
-    </div>
+    </section>
   );
 }
 

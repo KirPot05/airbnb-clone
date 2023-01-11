@@ -1,7 +1,13 @@
 import Head from "next/head";
-import Banner from "../components/Banner";
+import Banner from "../components/Home/Banner";
+import Explore from "../components/Home/Explore";
+import { fetchExploreData } from "../services";
 
-export default function Home() {
+type Props = {
+  exploreData?: IExploreData[];
+};
+
+export default function Home({ exploreData }: Props) {
   return (
     <>
       <Head>
@@ -13,9 +19,21 @@ export default function Home() {
           href="https://a0.muscache.com/airbnb/static/icons/android-icon-192x192-c0465f9f0380893768972a31a614b670.png"
         />
       </Head>
-      <main>
-        <Banner />
+
+      <Banner />
+      <main className="mx-auto max-w-7xl px-8 sm:px-16">
+        <Explore exploreData={exploreData} />
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const exploreData = await fetchExploreData();
+
+  return {
+    props: {
+      exploreData: exploreData || null,
+    },
+  };
 }
