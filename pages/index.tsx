@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Banner from "../components/Banner";
 
 export default function Home() {
   return (
@@ -12,7 +13,9 @@ export default function Home() {
           href="https://a0.muscache.com/airbnb/static/icons/android-icon-192x192-c0465f9f0380893768972a31a614b670.png"
         />
       </Head>
-      <main></main>
+      <main>
+        <Banner />
+      </main>
     </>
   );
 }
