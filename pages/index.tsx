@@ -1,4 +1,5 @@
 import Head from "next/head";
+import HeroCard from "../components/common/HeroCard";
 import Banner from "../components/Home/Banner";
 import Explore from "../components/Home/Explore";
 import Places from "../components/Home/Places";
@@ -26,6 +27,13 @@ export default function Home({ exploreData, accomodationPlaces }: Props) {
       <main className="mx-auto max-w-7xl px-8 sm:px-16">
         <Explore exploreData={exploreData} />
         <Places places={accomodationPlaces} />
+
+        <HeroCard
+          img="https://links.papareact.com/4cj"
+          title="The Greatest Outdoors"
+          description="Wishlists by Airbnb"
+          buttonText="Get Inspired"
+        />
       </main>
     </>
   );
