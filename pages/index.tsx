@@ -1,13 +1,15 @@
 import Head from "next/head";
 import Banner from "../components/Home/Banner";
 import Explore from "../components/Home/Explore";
-import { fetchExploreData } from "../services";
+import Places from "../components/Home/Places";
+import { exploreNearbyData, fetchAccomodationPlaces } from "../services";
 
 type Props = {
   exploreData?: IExploreData[];
+  accomodationPlaces?: IPlaces[];
 };
 
-export default function Home({ exploreData }: Props) {
+export default function Home({ exploreData, accomodationPlaces }: Props) {
   return (
     <>
       <Head>
@@ -23,17 +25,19 @@ export default function Home({ exploreData }: Props) {
       <Banner />
       <main className="mx-auto max-w-7xl px-8 sm:px-16">
         <Explore exploreData={exploreData} />
+        <Places places={accomodationPlaces} />
       </main>
     </>
   );
 }
 
 export async function getStaticProps() {
-  const exploreData = await fetchExploreData();
-
+  const exploreData = await exploreNearbyData();
+  const accomodationPlaces = await fetchAccomodationPlaces();
   return {
     props: {
       exploreData: exploreData || null,
+      accomodationPlaces: accomodationPlaces || null,
     },
   };
 }

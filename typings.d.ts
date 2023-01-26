@@ -3,3 +3,8 @@ interface IExploreData {
   location: string;
   distance: string;
 }
+
+interface IPlaces {
+  img: string;
+  title: string;
+}
