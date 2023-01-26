@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "../components/common/Footer";
 import HeroCard from "../components/common/HeroCard";
 import Banner from "../components/Home/Banner";
 import Explore from "../components/Home/Explore";
@@ -35,6 +36,8 @@ export default function Home({ exploreData, accomodationPlaces }: Props) {
           buttonText="Get Inspired"
         />
       </main>
+
+      <Footer />
     </>
   );
 }
